@@ -1,0 +1,198 @@
+.rect1 {
+    /* Ao determinar uma largura e/ou altura nos filhos, não mais será preenchido até o final do elemento pai */
+    width: 50px;    
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+}
+
+.rect2 {
+    /* Inicia vazio, porém a classe é utilizada */
+    border-radius: 8px;
+}
+
+body {
+    color: #FFF;
+    font: normal 1.0rem Arial;
+    text-align: center;
+    background: #7e624f;
+}
+
+h1 {
+    margin-top: -0.3rem;
+}
+
+#containerBoxesSizes {
+    width: 600px;
+    margin: auto;
+    border-top: 1px solid #8c6e5a;
+    border-bottom: 1px solid #8c6e5a;
+}
+
+#containerPainel {
+    width: 700px;
+    margin: auto;
+    margin-top: 0;
+    border-radius: 5px;
+}
+
+#container {
+    width: 400px;
+    height: 200px;
+    /* O display FLEX deve ser colocado no elemento pai */
+    display: flex;
+    /* Por padrão o display flex vem com flex-direction do tipo row */
+    flex-direction: row;
+    /* background-color: #444; */
+    /* background-color: #462814; */
+    margin: auto;
+    border-radius: 8px;
+}
+
+#color {
+    position: absolute;
+    width: 50px;
+    height: 35px;
+    top: 0.5rem;
+    right: 0.8rem;
+    border: none;
+    background-image: url(../change_color.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#obs {
+    line-height: 2.5rem;
+}
+
+#containerFlexDirection {
+    width: 600px;
+    margin: auto;
+    border-bottom: 1px solid #8c6e5a;
+}
+
+#fdirection {
+    width: 600px;
+    height: 45px;
+    display: flex;
+    margin: auto;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+#containerJustifyContent {
+    width: 600px;
+    margin: auto;
+    border-bottom: 1px solid #8c6e5a;
+}
+
+#jcontent {
+    width: 600px;
+    height: 90px;
+    display: flex;
+    margin: auto;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+#containerAlignItems {
+    width: 600px;
+    margin: auto;
+    border-bottom: 1px solid #8c6e5a;
+}
+
+#aitems {
+    width: 600px;
+    height: 45px;
+    display: flex;
+    margin: auto;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+#row {
+    /* background: #db3a3a; */
+    background: #b4b43b8a;
+}
+
+#jcontent > #flex-start {
+    /* background: #2828e7; */
+    background: #b4b43b8a;
+}
+
+#aitems > #flex-start {
+    /* background: #258d25; */
+    background: #b4b43b8a;
+}
+
+input {
+    width: 140px;
+    height: 30px;
+    font: bold 1.0rem Arial;    
+    /* background-color: #555; */
+    /* background-color: #50321e; */
+    color: #FFF;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.rectW {
+    display: none;
+}
+
+.rectH {
+    display: none;
+}
+
+.r1 {
+    background: #ff00008a;
+}
+
+.r2 {
+    background: #0000ff8a;
+}
+
+.r3 {
+    background: #0080008a;
+}
+
+#boxes .span1 {
+    position: absolute;
+    left: 116px;
+    top: 6px;
+}
+
+#boxes .span2 {
+    position: absolute;
+    left: 291px;
+    top: 6px;
+}
+
+#boxes .span3 {
+    position: absolute;
+    left: 468px;
+    top: 6px;
+}
+
+#boxesSizes .span2 {
+    position: absolute;
+    left: 401px;
+    top: 6px;
+}
+
+#boxesSizes .span1 {
+    position: absolute;
+    left: 156px;
+    top: 6px;
+}
+
+a {
+    color: #FFF;
+}
+

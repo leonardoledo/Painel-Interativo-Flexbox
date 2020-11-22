@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Flexbox Justify Content e Align Items</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/checkboxStyles.css">
+    
+</head>
+<body id="body">
+    <input type="button" id="color" onclick="buttonChangePageColor()">
+    <main id="containerPainel">
+    <br>
+    <h1>Painel Interativo - Flexbox</h1>    
+    <div id="container">          
+        <div class="rect1 rect2 r1"><strong>1</strong></div>
+        <div class="rect1 rect2 r2"><strong>2</strong></div>
+        <div class="rect1 rect2 r3"><strong>3</strong></div>
+        <div class="rectW rectH"></div>
+        <div class="rectW rectH"></div>
+        <div class="rectW rectH"></div>
+    </div>
+    <p><strong>Caixas Visíveis:</strong></p>
+    <div id="boxes">
+        <input type="checkbox" id="b4" class="boxes b1" checked onclick="hideOrShowBox()">
+        <label for="r1"><span class="span1">Caixa 1</span></label>
+        <input type="checkbox" class="boxes b2" checked onclick="hideOrShowBox()">
+        <label for="r2"><span class="span2">Caixa 2</span></label>
+        <input type="checkbox" class="boxes b3" checked onclick="hideOrShowBox()">
+        <label for="r3"><span class="span3">Caixa 3</span></label>
+    </div>
+    <section id="containerBoxesSizes" class="boxesBorderColor">
+    <p><strong>Dimensões das Caixas:</strong></p>
+    <div id="boxesSizes">
+        <input type="checkbox" id="boxWidth" class="boxesSizes b1" name="auto" checked>
+        <label for="r1"><span class="span1">Largura(Width)</span></label>
+        <input type="checkbox" id="boxHeight" class="boxesSizes b2" name="auto">
+        <label for="r2"><span class="span2">Altura(Height)</span></label>
+    </div>
+    <div id="obs">
+        <mark><strong> Importante!</strong></mark><br> A atualização padrão de altura e largura é desativada ao interagir com os botões de largura ou altura.<br>
+        Para reiniciar, <span onclick="reload()" style="cursor:pointer"><u><strong>clique aqui</strong></u></span>. <br>
+    </div>
+    </section>
+    <section id="containerFlexDirection" class="boxesBorderColor">
+        <p><strong>Flex Directions:</strong></p>
+        <div id="fdirection">
+            <input type="button" id="row" class="fdir" value="Row">
+            <input type="button" id="row-reverse" class="fdir" value="Row-Reverse">
+            <input type="button" id="column" class="fdir" value="Column">
+            <input type="button" id="column-reverse" class="fdir" value="Column-Reverse">
+        </div>
+    </section>
+    <section id="containerJustifyContent" class="boxesBorderColor">
+        <p><strong>Justify-Content:</strong></p>
+        <div id="jcontent">
+            <input type="button" id="flex-start" class="jcontent" value="Flex-Start">
+            <input type="button" id="flex-end" class="jcontent" value="Flex-End">
+            <input type="button" id="center" class="jcontent" value="Center">
+            <input type="button" id="space-between" class="jcontent" value="Space-Between">
+            <input type="button" id="space-around" class="jcontent" value="Space-Around">
+            <input type="button" id="space-evenly" class="jcontent" value="Space-Evenly">
+        </div>
+    </section>
+    <section id="containerAlignItems" class="boxesBorderColor">
+        <p><strong>Align-Items:</strong></p>
+        <div id="aitems">
+            <input type="button" id="stretch" class="aitems" value="Stretch"> 
+            <input type="button" id="flex-start" class="aitems" value="Flex-Start">              
+            <input type="button" id="flex-end" class="aitems" value="Flex-End">
+            <input type="button" id="center" class="aitems" value="Center">
+        </div>
+    </section>
+    <div id="obs2"></div>
+    <br><br>
+    <footer>
+        &copy; Leonardo Ledo da Silva
+    </footer>
+    <br>
+    <script src="../scripts/pageColor.js"></script>
+    <script src="../scripts/script.js"></script>
+</main>  
+</body>
+</html>
