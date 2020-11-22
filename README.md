@@ -1,5 +1,5 @@
 # Painel-Interativo-Flexbox
-## <a href="https://leonardoledo.github.io/Painel-Interativo-Flexbox/index.html">Clique aqui</a> para acessar o Painel Interativo de Flexbox
+## <a href="https://leonardoledo.github.io/Painel-Interativo-Flexbox/index.html" target="_blank">Clique aqui</a> para acessar o Painel Interativo de Flexbox
 Painel Interativo que estou criando para treinar as propriedades de **Flexbox** do **CSS3** e aproveitando para praticar **HTML5** e principalmente **JavaScript**.
  
 Acredito também que possa auxiliar outras pessoas que queiram verificar as propriedades em funcionamento, por isso tive a ideia de adicionar no GitHub!
