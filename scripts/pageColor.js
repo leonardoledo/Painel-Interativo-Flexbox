@@ -15,7 +15,7 @@ function initialPageColor() {
     } else {
         colorIndex = 0
     }
-    if (currentColor == 'brown') {
+    if (currentColor == 'brown' || currentColor == 'null') {
     body.style.backgroundColor = '#7e624f'
     containerPainel.style.backgroundColor = '#5a3c28'
     cont.style.backgroundColor = '#462814'
