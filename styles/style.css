@@ -112,6 +112,21 @@ h1 {
     flex-wrap: wrap;
 }
 
+#containerAlignContent {
+    width: 600px;
+    margin: auto;
+    border-bottom: 1px solid #8c6e5a;
+}
+
+#acontent {
+    width: 600px;
+    height: 90px;
+    display: flex;
+    margin: auto;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
 #row {
     /* background: #db3a3a; */
     background: #b4b43b8a;
