@@ -36,10 +36,17 @@
         <input type="checkbox" id="boxHeight" class="boxesSizes b2" name="auto">
         <label for="r2"><span class="span2">Altura(Height)</span></label>
     </div>
+    <div id="customBoxesSizes">
+        <label for="sliderWidthRange">Width</label>
+        <input id="sliderWidthRange" type="range" value="50" min="50" max="150" step="50">
+        <label for="sliderHeightRange">Height</label>
+        <input id="sliderHeightRange" type="range" value="50" min="50" max="150" step="50">
+    </div>
     <div id="obs">
         <mark><strong> Importante!</strong></mark><br> A atualização padrão de altura e largura é desativada ao interagir com os botões de largura ou altura.<br>
         Para reiniciar, <span onclick="reload()" style="cursor:pointer"><u><strong>clique aqui</strong></u></span>. <br>
     </div>
+    <br>
     </section>
     <section id="containerFlexDirection" class="boxesBorderColor">
         <p><strong>Flex Directions:</strong></p>

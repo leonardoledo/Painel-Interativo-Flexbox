@@ -67,6 +67,22 @@ h1 {
     line-height: 2.5rem;
 }
 
+#customBoxesSizes {
+    display: flex;
+    margin: auto;
+    height: 35px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#sliderWidthRange,
+#sliderHeightRange {
+    appearance: none;
+    height: 8px;
+    padding: 0;
+    border: none;
+}
+
 #containerFlexDirection {
     width: 600px;
     margin: auto;

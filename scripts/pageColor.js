@@ -26,7 +26,10 @@ function initialPageColor() {
         for(let i = 0; i < inputs.length; i++) {
             if (inputs[i].id == 'row' || inputs[i].id == 'nowrap' || inputs[i].id == 'stretch'){
             inputs[i].style.backgroundColor = '#b4b43b8a'
-            } else {
+            } else if(inputs[i].id == 'sliderWidthRange' || inputs[i].id == 'sliderHeightRange'){
+                inputs[i].style.backgroundColor = '#AAA'
+            } 
+            else {
             inputs[i].style.backgroundColor = '#555'
             }
         for (let i = 0; i < inputsJC.length; i++) {
@@ -49,6 +52,8 @@ function initialPageColor() {
         for(let i = 0; i < inputs.length; i++) {
             if (inputs[i].id == 'row' || inputs[i].id == 'nowrap' || inputs[i].id == 'stretch'){
             inputs[i].style.backgroundColor = '#b4b43b8a'
+            } else if(inputs[i].id == 'sliderWidthRange' || inputs[i].id == 'sliderHeightRange'){
+                inputs[i].style.backgroundColor = '#7e624f'
             } else {
             inputs[i].style.backgroundColor = '#50321e'
             }
