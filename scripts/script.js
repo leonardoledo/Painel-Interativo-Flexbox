@@ -215,6 +215,7 @@ function changeFlexDirections(event) {
     }
 }
 
+// Recebe qual a combinação atual com relação ao estado das checkboxes e designa um valor
 let combination = 3
 
 function setCombination() {
@@ -233,6 +234,7 @@ function setCombination() {
     }
 }
 
+// Aplica a configuração necessária de acordo com a combinação recebida da função setCombination
 function setBoxesSizes(n) {
     switch(n) {
         case 0:
