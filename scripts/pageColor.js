@@ -76,6 +76,8 @@ function buttonChangePageColor() {
     let inputs = containerPainel.querySelectorAll('input')
     let flexDirection = document.querySelector('#fdirection')
     let inputsFD = flexDirection.querySelectorAll('input')
+    let flexWrap = document.querySelector('#fwrap')
+    let inputsFW = flexWrap.querySelectorAll('input')
     let justifyContent = document.getElementById('jcontent')
     let inputsJC = justifyContent.getElementsByTagName('input')
     let alignItems = document.querySelector('#aitems')
@@ -113,6 +115,13 @@ function buttonChangePageColor() {
                 inputsFD[i].style.backgroundColor = '#b4b43b8a'
             } else {
                 inputsFD[i].style.backgroundColor = '#555'
+            }
+        }
+        for(let i = 0; i < inputsFW.length; i++) {
+            if (inputsFW[i].id == buttonFlexWrap) {
+                inputsFW[i].style.backgroundColor = '#b4b43b8a'
+            } else {
+                inputsFW[i].style.backgroundColor = '#555'
             }
         }
         for(let i = 0; i < inputsJC.length; i++) {   
@@ -168,6 +177,13 @@ function buttonChangePageColor() {
                 inputsFD[i].style.backgroundColor = '#b4b43b8a'
             } else {
                 inputsFD[i].style.backgroundColor = '#50321e'
+            }
+        }
+        for(let i = 0; i < inputsFW.length; i++) {
+            if (inputsFW[i].id == buttonFlexWrap) {
+                inputsFW[i].style.backgroundColor = '#b4b43b8a'
+            } else {
+                inputsFW[i].style.backgroundColor = '#50321e'
             }
         }
         for(let i = 0; i < inputsJC.length; i++) {   

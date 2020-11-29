@@ -117,6 +117,20 @@ h1 {
     flex-wrap: wrap;
 }
 
+#containerFlexWrap {
+    width: 600px;
+    margin: auto;
+    border-bottom: 1px solid #8c6e5a;
+}
+
+#fwrap {
+    width: 600px;
+    height: 45px;
+    display: flex;
+    margin: auto;
+    justify-content: space-evenly;
+}
+
 #containerJustifyContent {
     width: 600px;
     margin: auto;

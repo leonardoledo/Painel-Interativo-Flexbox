@@ -315,6 +315,7 @@ function setBoxesSizes(n) {
     }   
 }
 
+// Alterar imagem dos thumbs do input Range e desabilitar alteração de tamanho, quando desabilitado
 function changeSlidersThumbs(slider) {
     if(slider.disabled == true) {
         if(slider.id == 'sliderWidthRange'){
@@ -338,6 +339,28 @@ function changeSlidersThumbs(slider) {
         currentHeightValue.style.color = '#FFF'
         }
     }
+}
+
+// Escutar clique nos botões de Flex Wrap e alterar propriedades das caixas
+let flexWrapInputs = document.querySelectorAll('.fwrap')
+let buttonFlexWrap = 'nowrap'
+
+flexWrapInputs.forEach((input) => {
+    input.addEventListener('click', changeFlexWrap)
+})
+
+function changeFlexWrap(event) {
+    let fwrap = document.getElementById('fwrap')
+    let inputItems = fwrap.getElementsByClassName('fwrap')
+    let option = event.target
+    let button = option.id
+    buttonFlexWrap = option.id
+
+    clearProperties(inputItems)
+
+    cont.style.flexWrap = button
+    option.style.background = '#b4b43b8a'
+
 }
 
 // Escutar clique nos botões de Justify-Content e alterar propriedades das caixas
