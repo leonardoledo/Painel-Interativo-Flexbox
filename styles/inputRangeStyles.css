@@ -1,0 +1,13 @@
+#sliderWidthRange::-webkit-slider-thumb {
+    appearance: none;
+    width: 26px;
+    height: 26px;
+    background: url(../circle.png);
+}
+
+#sliderHeightRange::-webkit-slider-thumb {
+    appearance: none;
+    width: 26px;
+    height: 26px;
+    background: url(../disabled_circle.png);
+}

@@ -73,14 +73,33 @@ h1 {
     height: 35px;
     justify-content: space-evenly;
     align-items: center;
+    position: relative;
 }
 
 #sliderWidthRange,
 #sliderHeightRange {
     appearance: none;
-    height: 8px;
+    height: 26px;
     padding: 0;
     border: none;
+    border-radius: 12px;
+}
+
+#currentWidthValue {
+    font-size: 0.8rem;
+    position: absolute;
+    left: 192px;
+    top: 35px;
+    font-weight: bold;
+}
+
+#currentHeightValue {
+    font-size: 0.8rem;
+    position: absolute;
+    left: 472px;
+    top: 35px;
+    font-weight: bold;
+    color: #888;
 }
 
 #containerFlexDirection {

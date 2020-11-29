@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/checkboxStyles.css">    
+    <link rel="stylesheet" href="./styles/inputRangeStyles.css">    
 </head>
 <body id="body">
     <input type="button" id="color" onclick="buttonChangePageColor()">
@@ -31,22 +32,24 @@
     <section id="containerBoxesSizes" class="boxesBorderColor">
     <p><strong>Dimensões das Caixas:</strong></p>
     <div id="boxesSizes">
-        <input type="checkbox" id="boxWidth" class="boxesSizes b1" name="auto" checked>
+        <input type="checkbox" id="boxWidth" class="boxesProperties b1" name="auto" checked>
         <label for="r1"><span class="span1">Largura(Width)</span></label>
-        <input type="checkbox" id="boxHeight" class="boxesSizes b2" name="auto">
+        <input type="checkbox" id="boxHeight" class="boxesProperties b2" name="auto">
         <label for="r2"><span class="span2">Altura(Height)</span></label>
     </div>
     <div id="customBoxesSizes">
         <label for="sliderWidthRange">Width</label>
-        <input id="sliderWidthRange" type="range" value="50" min="50" max="150" step="50">
+        <input id="sliderWidthRange" class="boxesSizes" type="range" value="50" min="50" max="250" oninput="changeBoxesSizes(event)">
+        <span id="currentWidthValue"></span>
         <label for="sliderHeightRange">Height</label>
-        <input id="sliderHeightRange" type="range" value="50" min="50" max="150" step="50">
+        <input id="sliderHeightRange" class="boxesSizes" type="range" value="50" min="50" max="150" oninput="changeBoxesSizes(event)" disabled>
+        <span id="currentHeightValue"></span>
     </div>
+    <br>
     <div id="obs">
         <mark><strong> Importante!</strong></mark><br> A atualização padrão de altura e largura é desativada ao interagir com os botões de largura ou altura.<br>
         Para reiniciar, <span onclick="reload()" style="cursor:pointer"><u><strong>clique aqui</strong></u></span>. <br>
     </div>
-    <br>
     </section>
     <section id="containerFlexDirection" class="boxesBorderColor">
         <p><strong>Flex Directions:</strong></p>
@@ -80,12 +83,12 @@
     <section id="containerAlignContent" class="boxesBorderColor">
         <p><strong>Align-Content:</strong></p>
         <div id="acontent">
-            <input type="button" id="stretch" class="aitems" value="Stretch"> 
-            <input type="button" id="flex-start" class="aitems" value="Flex-Start">              
-            <input type="button" id="flex-end" class="aitems" value="Flex-End">
-            <input type="button" id="center" class="aitems" value="Center">
-            <input type="button" id="space-between" class="jcontent" value="Space-Between">
-            <input type="button" id="space-around" class="jcontent" value="Space-Around">
+            <input type="button" id="stretch" class="acontent" value="Stretch"> 
+            <input type="button" id="flex-start" class="acontent" value="Flex-Start">              
+            <input type="button" id="flex-end" class="acontent" value="Flex-End">
+            <input type="button" id="center" class="acontent" value="Center">
+            <input type="button" id="space-between" class="acontent" value="Space-Between">
+            <input type="button" id="space-around" class="acontent" value="Space-Around">
         </div>
     </section>
     <div id="obs2"></div>

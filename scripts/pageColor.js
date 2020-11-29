@@ -73,12 +73,15 @@ function initialPageColor() {
 function buttonChangePageColor() {
     let containerPainel = document.getElementById('containerPainel')
     let boxesBorderColor = containerPainel.querySelectorAll('.boxesBorderColor')
-    let fdirection = document.querySelector('#fdirection')
-    let jcontent = document.getElementById('jcontent')
-    let aitems = document.querySelector('#aitems')
-    let inputsFD = fdirection.querySelectorAll('input')
-    let inputsJC = jcontent.getElementsByTagName('input')
-    let inputsAI = aitems.querySelectorAll('input')
+    let inputs = containerPainel.querySelectorAll('input')
+    let flexDirection = document.querySelector('#fdirection')
+    let inputsFD = flexDirection.querySelectorAll('input')
+    let justifyContent = document.getElementById('jcontent')
+    let inputsJC = justifyContent.getElementsByTagName('input')
+    let alignItems = document.querySelector('#aitems')
+    let inputsAI = alignItems.querySelectorAll('input')
+    let alignContent = document.getElementById('acontent')  
+    let inputsAC = alignContent.querySelectorAll('.acontent')
     let checkboxContainer = document.querySelector('#boxes')
     let checkboxes = checkboxContainer.querySelectorAll('.boxes')
 
@@ -97,8 +100,13 @@ function buttonChangePageColor() {
                 checkboxes[i].style.backgroundColor = '#555'
             }
         }  
-        for(let i = 0; i < boxSizes.length; i++){
-            boxSizes[i].style.backgroundColor = '#555'
+        for(let i = 0; i < boxProperties.length; i++){
+            boxProperties[i].style.backgroundColor = '#555'
+        }
+        for(let i = 0; i < inputs.length; i++) {
+            if(inputs[i].id == 'sliderWidthRange' || inputs[i].id == 'sliderHeightRange'){
+                inputs[i].style.backgroundColor = '#AAA'
+            }
         }
         for(let i = 0; i < inputsFD.length; i++) {
             if (inputsFD[i].id == buttonFlexDirection) {
@@ -120,7 +128,14 @@ function buttonChangePageColor() {
             } else {
                 inputsAI[i].style.backgroundColor = '#555'
             }
-        }              
+        }
+        for(let i = 0; i < inputsAC.length; i++) {
+            if(inputsAC[i].id == buttonAlignContent) {
+                inputsAC[i].style.backgroundColor = '#b4b43b8a'
+            } else {
+                inputsAC[i].style.backgroundColor = '#555'
+            }
+        }         
         colorIndex++         
         localStorage.setItem("pageColor", "grey")
         localStorage.getItem("pageColor")
@@ -140,8 +155,13 @@ function buttonChangePageColor() {
                 checkboxes[i].style.backgroundColor = '#50321e'
             }        
         }
-        for(let i = 0; i < boxSizes.length; i++){
-            boxSizes[i].style.backgroundColor = '#50321e'
+        for(let i = 0; i < boxProperties.length; i++){
+            boxProperties[i].style.backgroundColor = '#50321e'
+        }
+        for(let i = 0; i < inputs.length; i++) {
+                if(inputs[i].id == 'sliderWidthRange' || inputs[i].id == 'sliderHeightRange'){
+                    inputs[i].style.backgroundColor = '#7e624f'
+                }
         }
         for(let i = 0; i < inputsFD.length; i++) {
             if (inputsFD[i].id == buttonFlexDirection) {
@@ -163,7 +183,14 @@ function buttonChangePageColor() {
             } else {
                 inputsAI[i].style.backgroundColor = '#50321e'
             }
-        }       
+        }
+        for(let i = 0; i < inputsAC.length; i++) {
+            if(inputsAC[i].id == buttonAlignContent) {
+                inputsAC[i].style.backgroundColor = '#b4b43b8a'
+            } else {
+                inputsAC[i].style.backgroundColor = '#50321e'
+            }
+        }     
         colorIndex--
         localStorage.setItem("pageColor", "brown")
         localStorage.getItem("pageColor")

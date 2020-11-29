@@ -81,19 +81,19 @@ function hiddenBoxes() {
 }
 
 // Alterar dimensões de largura e altura das caixas 1, 2 e 3
-let containerCheckboxBoxesSizes = document.getElementById('boxesSizes')
-let boxSizes = containerCheckboxBoxesSizes.querySelectorAll('.boxesSizes')
+let containerBoxesSizes = document.getElementById('boxesSizes')
+let boxProperties = containerBoxesSizes.querySelectorAll('.boxesProperties')
 let boxWidth = document.querySelector('#boxWidth')
 let boxHeight = document.getElementById('boxHeight')
 let obs = document.querySelector('div#obs')
 
-boxSizes.forEach((checkbox) => {
-    checkbox.addEventListener('click', changeBoxesSizes)
+boxProperties.forEach((checkbox) => {
+    checkbox.addEventListener('click', changeBoxesProperties)
 })
 
 obs.style.display = 'none'
 
-function changeBoxesSizes(event) {
+function changeBoxesProperties(event) {
     let option = event.target
     let clickedCheckbox = option.id
     let checkColor = document.styleSheets[1]
@@ -104,18 +104,26 @@ function changeBoxesSizes(event) {
         if(boxHeight.checked == false) {
             changeRectHeightProperty.removeProperty("height")
             boxHeight.name = 'custom'
+            sliderHeightRange.setAttribute("disabled", true)
+            changeSlidersThumbs(sliderHeightRange)
         } else {
-            changeRectHeightProperty.setProperty("height", "50px")            
+            changeRectHeightProperty.setProperty("height", `${sliderHeightRange.value}px`)            
             boxHeight.name = 'custom'
+            sliderHeightRange.removeAttribute("disabled")
+            changeSlidersThumbs(sliderHeightRange)
         }
     }
     else if(clickedCheckbox == 'boxWidth') {
         if (boxWidth.checked == false) {
             changeRectWidthProperty.removeProperty("width")
             boxWidth.name = 'custom'
+            sliderWidthRange.setAttribute("disabled", true)
+            changeSlidersThumbs(sliderWidthRange)
         } else {
-            changeRectWidthProperty.setProperty("width", "50px")
+            changeRectWidthProperty.setProperty("width", `${sliderWidthRange.value}px`)
             boxWidth.name = 'custom'
+            sliderWidthRange.removeAttribute("disabled")
+            changeSlidersThumbs(sliderWidthRange)
         }
     }
     setCombination()
@@ -126,6 +134,31 @@ function changeBoxesSizes(event) {
     obs.style.display = 'block'
 }
 
+let customBoxesSizesContainer = document.querySelector('#customBoxesSizes')
+let boxesSizes = customBoxesSizesContainer.querySelectorAll('.boxesSizes')
+let sliderWidthRange = document.querySelector('#sliderWidthRange')
+let sliderHeightRange = document.getElementById('sliderHeightRange')
+let currentWidthValue = document.getElementById('currentWidthValue')
+let currentHeightValue = document.querySelector('#currentHeightValue')
+
+currentWidthValue.innerHTML = sliderWidthRange.value
+currentHeightValue.innerHTML = sliderHeightRange.value
+
+function changeBoxesSizes(event) {
+    let option = event.target
+    let clickedSlider = option.id
+
+    if(clickedSlider == 'sliderWidthRange'){
+        changeRectWidthProperty.setProperty('width', `${option.value}px`)
+    } else if (clickedSlider == 'sliderHeightRange') {
+            changeRectHeightProperty.setProperty('height', `${option.value}px`)
+    }
+    currentWidthValue.innerHTML = sliderWidthRange.value
+    currentHeightValue.innerHTML = sliderHeightRange.value
+}
+
+
+
 function reload(){
     location.reload()
 }
@@ -135,6 +168,8 @@ let flexDirectionsInputs = document.querySelectorAll('.fdir')
 let buttonAlignItems = 'stretch'
 let changeRectWidthProperty = document.styleSheets[0].cssRules[0].style
 let changeRectHeightProperty = document.styleSheets[0].cssRules[1].style
+let changeSliderThumbWidth = document.styleSheets[2].cssRules[0].style
+let changeSliderThumbHeight = document.styleSheets[2].cssRules[1].style
 
 flexDirectionsInputs.forEach((input) => {
     input.addEventListener('click', changeFlexDirections)
@@ -202,7 +237,7 @@ function setBoxesSizes(n) {
     switch(n) {
         case 0:
             if(boxHeight.checked == true) {
-                changeRectHeightProperty.setProperty("height", "50px")
+                changeRectHeightProperty.setProperty("height", `${sliderHeightRange.value}px`)
                 boxHeight.setAttribute("checked", true)
             } else {
                 changeRectHeightProperty.removeProperty("height")
@@ -211,7 +246,7 @@ function setBoxesSizes(n) {
             break
         case 1:
             if (boxWidth.checked == true) {
-                changeRectWidthProperty.setProperty("width", "50px")
+                changeRectWidthProperty.setProperty("width", `${sliderWidthRange.value}px`)
                 boxWidth.setAttribute("checked", true)
             } else {
                 changeRectWidthProperty.removeProperty("width")
@@ -220,14 +255,14 @@ function setBoxesSizes(n) {
             break
         case 2:
             if(boxHeight.checked == true) {
-                changeRectHeightProperty.setProperty("height", "50px")
+                changeRectHeightProperty.setProperty("height", `${sliderHeightRange.valuepx}`)                
                 boxHeight.setAttribute("checked", true)
             } else {
                 changeRectHeightProperty.removeProperty("height")
                 boxHeight.removeAttribute("checked")
             }
             if (boxWidth.checked == true) {
-                changeRectWidthProperty.setProperty("width", "50px")
+                changeRectWidthProperty.setProperty("width", `${sliderWidthRange.value}px`)
                 boxWidth.setAttribute("checked", true)
             } else {
                 changeRectWidthProperty.removeProperty("width")
@@ -237,31 +272,72 @@ function setBoxesSizes(n) {
         default:
             if(buttonAlignItems == 'stretch') {
                 if(buttonFlexDirection == 'row' || buttonFlexDirection == 'row-reverse'){
-                    changeRectWidthProperty.setProperty("width", "50px")
+                    changeRectWidthProperty.setProperty("width", `${sliderWidthRange.value}px`)
                     boxWidth.setAttribute("checked", true)
+                    sliderWidthRange.removeAttribute("disabled")
                     changeRectHeightProperty.removeProperty("height")
                     boxHeight.removeAttribute("checked")
+                    sliderHeightRange.setAttribute("disabled", true)
+                    changeSlidersThumbs(sliderWidthRange)
+                    changeSlidersThumbs(sliderHeightRange)                   
                 } else if(buttonFlexDirection == 'column' || buttonFlexDirection == 'column-reverse') {
-                    changeRectHeightProperty.setProperty("height", "50px")
+                    changeRectHeightProperty.setProperty("height", `${sliderHeightRange.value}px`)
                     boxHeight.setAttribute("checked", true)
+                    sliderHeightRange.removeAttribute("disabled")
                     changeRectWidthProperty.removeProperty("width")
                     boxWidth.removeAttribute("checked")
+                    sliderWidthRange.setAttribute("disabled", true) 
+                    changeSlidersThumbs(sliderWidthRange)
+                    changeSlidersThumbs(sliderHeightRange)                   
                 }
             } else if(buttonAlignItems != 'stretch') {
                 if(buttonFlexDirection == 'row' || buttonFlexDirection == 'row-reverse') {
-                    changeRectWidthProperty.setProperty("width", "50px")
+                    changeRectWidthProperty.setProperty("width", `${sliderWidthRange.value}px`)
                     boxWidth.setAttribute("checked", true)
+                    sliderWidthRange.removeAttribute("disabled")
                     changeRectHeightProperty.removeProperty("height")
                     boxHeight.removeAttribute("checked")
+                    sliderHeightRange.setAttribute("disabled", true)
+                    changeSlidersThumbs(sliderWidthRange)
+                    changeSlidersThumbs(sliderHeightRange)                   
                 } else if(buttonFlexDirection == 'column' || buttonFlexDirection == 'column-reverse') {
-                    changeRectHeightProperty.setProperty("height", "50px")
+                    changeRectHeightProperty.setProperty("height", `${sliderHeightRange.value}px`)
                     boxHeight.setAttribute("checked", true)
+                    sliderHeightRange.removeAttribute("disabled")
                     changeRectWidthProperty.removeProperty("width")
                     boxWidth.removeAttribute("checked")
+                    sliderWidthRange.setAttribute("disabled", true)
+                    changeSlidersThumbs(sliderWidthRange)
+                    changeSlidersThumbs(sliderHeightRange)
                 }
             }
             break
     }   
+}
+
+function changeSlidersThumbs(slider) {
+    if(slider.disabled == true) {
+        if(slider.id == 'sliderWidthRange'){
+        changeSliderThumbWidth.background = 'url(../disabled_circle.png)'
+        currentWidthValue.style.color = '#888'
+        }
+        else if(slider.id == 'sliderHeightRange') {
+        changeSliderThumbHeight.background = 'url(../disabled_circle.png)'
+        currentHeightValue.style.color = '#888'
+        console.log('teste')
+        }
+    } else {
+        if(slider.id == 'sliderWidthRange') {
+        changeSliderThumbWidth.background = 'url(../circle.png)'
+        currentWidthValue.innerHTML = sliderWidthRange.value
+        currentWidthValue.style.color = '#FFF'
+        }
+        else if(slider.id == 'sliderHeightRange') {
+        changeSliderThumbHeight.background = 'url(../circle.png)'
+        currentHeightValue.innerHTML = sliderHeightRange.value
+        currentHeightValue.style.color = '#FFF'
+        }
+    }
 }
 
 // Escutar clique nos botões de Justify-Content e alterar propriedades das caixas
@@ -283,7 +359,6 @@ function changeJustifyContent(event) {
 
     cont.style.justifyContent = button
     option.style.background = '#b4b43b8a'
-
 }
 
 let buttonFlexDirection = 'row'
@@ -316,4 +391,24 @@ function changeAlignItems(event) {
         cont.style.alignItems = button
         option.style.background = '#b4b43b8a'
     }
+}
+
+let buttonAlignContent = 'stretch'
+let alignContentInputs = document.querySelectorAll('.acontent')
+
+alignContentInputs.forEach((input) => {
+    input.addEventListener('click', changeAlignContent)
+})
+
+function changeAlignContent(event) {
+    let acontent = document.querySelector('#acontent')
+    let inputItems = acontent.getElementsByClassName('acontent')
+    let option = event.target
+    let button = option.id
+    buttonAlignContent = option.id
+
+    clearProperties(inputItems)
+
+    cont.style.alignContent = button
+    option.style.background = '#b4b43b8a'
 }
