@@ -327,7 +327,6 @@ function changeSlidersThumbs(slider) {
         else if(slider.id == 'sliderHeightRange') {
         changeSliderThumbHeight.background = 'url(../disabled_circle.png)'
         currentHeightValue.style.color = '#888'
-        console.log('teste')
         }
     } else {
         if(slider.id == 'sliderWidthRange') {
