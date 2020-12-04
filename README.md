@@ -10,9 +10,9 @@ Acredito também que possa auxiliar outras pessoas que queiram verificar as prop
 - [x] Criação do campo 'Dimensões das Caixas' que interage de forma automática às propriedades selecionadas, desde que não seja customizado pelo usuário
 - [x] Opção de mudar cor da página de Marrom para Cinza no botão no canto superior direito e fazer com que a cor escolhida fique salva
 
-### Próximos passos: 
-- [ ] Adicionar a propriedade flexwrap, porém ainda estou pensando na melhor forma de intergrá-la para facilitar o entendimento 
-- [ ] Adicionar a propriedade align-content
+### ~~Próximos passos~~ Passos concluídos: 
+- [x] Adicionar a propriedade flexwrap, porém ainda estou pensando na melhor forma de intergrá-la para facilitar o entendimento 
+- [x] Adicionar a propriedade align-content
 
 Outro plano a longo prazo é revisar os códigos em **JavaScript** para efetuar melhorias a fim de torná-los autoexplicativos e menores, na medida do possível, porém acredito que conseguirei realizar estes tipos de melhorias à medida que aprender mais sobre a linguagem.
 
