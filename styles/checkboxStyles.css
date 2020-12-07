@@ -3,7 +3,7 @@
     font-size: 20px;
     position: absolute;
     top: 1px;
-    left: 80px; 
+    left: 66px; 
     color: #AAA;
 }
 
@@ -12,7 +12,7 @@
     font-size: 20px;
     position: absolute;
     top: 1px;
-    left: 256px;
+    left: 213px;
     color: #AAA;
 }
 
@@ -21,7 +21,7 @@
     font-size: 20px;
     position: absolute;
     top: 1px;
-    left: 432px;
+    left: 361px;
     color: #AAA;
 }
 
@@ -30,7 +30,7 @@
     font-size: 20px;
     position: absolute;
     top: 1px;
-    left: 115px; 
+    left: 96px; 
     color: #AAA;
 }
 
@@ -39,13 +39,13 @@
     font-size: 20px;
     position: absolute;
     top: 1px;
-    left: 362px;
+    left: 302px;
     color: #AAA;
 }
 
 #boxes,
 #boxesSizes {
-    width: 600px;
+    width: 500px;
     height: 45px;
     margin: auto;
     display: flex;

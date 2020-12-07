@@ -4,6 +4,7 @@ let currentColor = localStorage.getItem("pageColor")
 function initialPageColor() {
     let containerPainel = document.getElementById('containerPainel')
     let boxesBorderColor = containerPainel.querySelectorAll('.boxesBorderColor')
+    let midBorderColor = containerPainel.querySelector('#flexboxPropertiesContainer')
     let inputs = containerPainel.querySelectorAll('input')
     let jcontent = document.getElementById('jcontent')
     let inputsJC = jcontent.getElementsByTagName('input')
@@ -19,7 +20,7 @@ function initialPageColor() {
     body.style.backgroundColor = '#AAA'
     containerPainel.style.backgroundColor = '#666'
     cont.style.backgroundColor = '#444'
-    document.getElementById('color').style.backgroundColor = '#555'
+    midBorderColor.style.borderColor = '#AAA'
         for(let i = 0; i < boxesBorderColor.length; i++){
             boxesBorderColor[i].style.borderColor = '#AAA'
         }
@@ -45,7 +46,7 @@ function initialPageColor() {
     body.style.backgroundColor = '#7e624f'
     containerPainel.style.backgroundColor = '#5a3c28'
     cont.style.backgroundColor = '#462814'
-    document.getElementById('color').style.backgroundColor = '#50321e'
+    midBorderColor.style.borderColor = '#8c6e5a'
         for(let i = 0; i < boxesBorderColor.length; i++){
             boxesBorderColor[i].style.borderColor = '#8c6e5a'
         }
@@ -73,6 +74,7 @@ function initialPageColor() {
 function buttonChangePageColor() {
     let containerPainel = document.getElementById('containerPainel')
     let boxesBorderColor = containerPainel.querySelectorAll('.boxesBorderColor')
+    let midBorderColor = containerPainel.querySelector('#flexboxPropertiesContainer')
     let inputs = containerPainel.querySelectorAll('input')
     let flexDirection = document.querySelector('#fdirection')
     let inputsFD = flexDirection.querySelectorAll('input')
@@ -98,6 +100,7 @@ function buttonChangePageColor() {
         body.style.backgroundColor = '#AAA'        
         cont.style.backgroundColor = '#444'
         document.getElementById('color').style.backgroundColor = '#555'
+        midBorderColor.style.borderColor = '#AAA'
         for(let i = 0; i < boxesBorderColor.length; i++){
             boxesBorderColor[i].style.borderColor = '#AAA'
         }
@@ -125,6 +128,7 @@ function buttonChangePageColor() {
         body.style.backgroundColor = '#7e624f'
         cont.style.backgroundColor = '#462814'
         document.getElementById('color').style.backgroundColor = '#50321e'
+        midBorderColor.style.borderColor = '#8c6e5a'
         for(let i = 0; i < boxesBorderColor.length; i++){
             boxesBorderColor[i].style.borderColor = '#8c6e5a'
         }
